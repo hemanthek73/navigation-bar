@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>navigation</title>
+  <style>
+    body {
+      display: flex;
+    }
+    #aside {
+      width: 20%;
+      height: 700px;
+      background-color: #f9efef;
+      padding: 20px;
+      border-right: 3px solid bisque;
+      box-shadow: 0px 0px 5px;
+
+    }
+    
+    
+    #content {
+      flex: 1;
+      padding: 40px;
+    }
+     li a{
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      list-style:none;
+      color:black;
+      
+      font-size: 24px;
+      margin-bottom:20px ;
+      
+     
+    }
+    li a:hover{
+      border:3px solid rgb(135, 170, 222);
+      border-left: none;
+      border-radius: 15px;
+      box-shadow: 0 3px 0;
+      background-color: aliceblue;
+      color:black
+      
+      
+    }
+    
+    h1{
+      font-family:Arial, Helvetica, sans-serif ;
+      font-size: 40px;
+    }
+    p{
+      font-size: 24px;
+      
+    }
+  </style>
+</head>
+<body>
+  <div id="aside">
+    <ul>
+      <li><a href="#" onclick="showContent('home')">Home</a></li>
+      <li><a href="#" onclick="showContent('contact')">Contact</a></li>
+      <li><a href="#" onclick="showContent('information')">Information</a></li>
+      <li><a href="#" onclick="showContent('guide')">Guide</a></li>
+    </ul>
+  </div>
+  <div id="content">
+    <h1>Welcome to the Navbar</h1>
+    <p>Please click on a component on the left to view its content.</p>
+  </div>
+  <script>
+    function showContent(component) {
+      var content = document.getElementById("content");
+      switch (component) {
+        case "home":
+          content.innerHTML = "<h1>Home</h1><p>This is the home page.</p>";
+          break;
+        case "contact":
+          content.innerHTML = "<h1>Contact</h1><p>This is the contact information.</p>";
+          break;
+        case "information":
+          content.innerHTML = "<h1>Information</h1><p>This is some information.</p>";
+          break;
+        case "guide":
+          content.innerHTML = "<h1>Guide</h1><p>This is the guide content.</p>";
+          break;
+        default:
+          content.innerHTML = "<h1>Error</h1><p>Invalid component selected.</p>";
+      }
+    }
+  </script>
+</body>
+</html>
